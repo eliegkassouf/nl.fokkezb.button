@@ -1,7 +1,7 @@
 # Button widget
 This widget for the [Appcelerator](http://www.appcelerator.com) Titanium Alloy MVC framework provides a view that mimics `Ti.UI.Button`, but with more flexible styling and support for icon fonts.
 
-->![demo](https://github.com/fokkezb/nl.fokkezb.button/raw/master/docs/demo.png)<-
+![demo](https://github.com/fokkezb/nl.fokkezb.button/raw/master/docs/demo.png)
 
 ## The repository
 The repository contains a complete Titanium Alloy project, including the widget, optional external libs and assets and a demo app:
