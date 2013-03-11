@@ -1,0 +1,64 @@
+<Alloy>
+	<TabGroup>
+		<Tab title="System" icon="icons/light_appcelerator.png">
+			<Window title="System style">
+            	<ScrollView class="columns">
+					<View class="half">
+						<Label>System</Label>
+						<Button onClick="doClick" title="Enabled" />
+						<Button onClick="doClick" title="Disabled" class="disabled" />
+					</View>
+					<View class="half">
+						<Label>Widget</Label>
+						<Widget src="nl.fokkezb.button" onClick="doClick" title="Enabled" style="ios" />
+						<Widget src="nl.fokkezb.button" onClick="doClick" title="Disabled" style="ios" class="disabled"/>
+					</View>
+               </ScrollView>
+            </Window>
+        </Tab>
+        <Tab title="Bootstrap" icon="icons/light_bird.png">
+            <Window title="Bootstrap style">
+            	<ScrollView class="columns">
+            		<View class="half">
+						<Label>Enabled</Label>
+						<Widget src="nl.fokkezb.button" onClick="doClick" title="Default" style="bs-default" />
+						<Widget src="nl.fokkezb.button" onClick="doClick" title="Primary" style="bs-primary" />
+						<Widget src="nl.fokkezb.button" onClick="doClick" title="Info" style="bs-info" />
+						<Widget src="nl.fokkezb.button" onClick="doClick" title="Success" style="bs-success" />
+						<Widget src="nl.fokkezb.button" onClick="doClick" title="Warning" style="bs-warning" />
+						<Widget src="nl.fokkezb.button" onClick="doClick" title="Danger" style="bs-danger" />
+						<Widget src="nl.fokkezb.button" onClick="doClick" title="Inverse" style="bs-inverse" />
+						<Widget src="nl.fokkezb.button" onClick="doClick" title="Link" style="bs-link" />
+					</View>
+					<View class="half">
+						<Label>Disabled</Label>
+						<Widget src="nl.fokkezb.button" onClick="doClick" title="Default" style="bs-default" class="disabled" />
+						<Widget src="nl.fokkezb.button" onClick="doClick" title="Primary" style="bs-primary" class="disabled" />
+						<Widget src="nl.fokkezb.button" onClick="doClick" title="Info" style="bs-info" class="disabled" />
+						<Widget src="nl.fokkezb.button" onClick="doClick" title="Success" style="bs-success" class="disabled" />
+						<Widget src="nl.fokkezb.button" onClick="doClick" title="Warning" style="bs-warning" class="disabled" />
+						<Widget src="nl.fokkezb.button" onClick="doClick" title="Danger" style="bs-danger" class="disabled" />
+						<Widget src="nl.fokkezb.button" onClick="doClick" title="Inverse" style="bs-inverse" class="disabled" />
+						<Widget src="nl.fokkezb.button" onClick="doClick" title="Link" style="bs-link" class="disabled" />
+					</View>
+				</ScrollView>
+            </Window>
+        </Tab>
+        <Tab title="Icons" icon="icons/light_info.png">
+            <Window title="Icons">
+            	<ScrollView>
+					<Widget src="nl.fokkezb.button" onClick="doClick" title="Left (default)" style="bs-default" icon="icon-off" />
+					<Widget src="nl.fokkezb.button" onClick="doClick" title="Right" style="bs-default" icon="icon-off" iconPosition="right" />
+					<Widget src="nl.fokkezb.button" onClick="doClick" style="bs-default" icon="icon-off" />
+            	</ScrollView>
+            </Window>
+    	</Tab>
+    	<Tab title="Custom" icon="icons/light_gears.png">
+            <Window title="Custom">
+            	<ScrollView>
+            		<Widget src="nl.fokkezb.button" onClick="doClick" title="TSS styling" id="custom" />
+            	</ScrollView>
+            </Window>
+    	</Tab>
+	</TabGroup>
+</Alloy>

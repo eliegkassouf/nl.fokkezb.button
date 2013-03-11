@@ -1,0 +1,9 @@
+#appname:Button
+#appid:nl.fokkezb.button
+#type:ipad
+#guid:1e7d3b4c-06b9-4d06-87a3-ca09b3ce96f7
+#version:1.0
+#publisher:fokke
+#url:http://fokkezb.nl
+#image:appicon.png
+#desc:Replacement for Ti.UI.Button with better support for styling and icons
