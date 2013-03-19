@@ -60,7 +60,7 @@ For example:
 | bs-inverse |![bs-inverse](https://github.com/fokkezb/nl.fokkezb.button/raw/master/docs/bs-inverse.png)| Twitter Bootstrap's inverse button |
 | bs-link |![bs-link](https://github.com/fokkezb/nl.fokkezb.button/raw/master/docs/bs-link.png)| Twitter Bootstrap's link button |
 
-## Adding styles
+## Adding styles and setting the default
 Add styles by requiring the widget's styles-lib in your app's `alloy.js` and use the `set()` method to set (or override) a pre-defined style like this:
 
 ```javascript
@@ -77,6 +77,13 @@ Styles.set('my-style', {
 ```
 
 The lib also exposes `has()` and `get()`. Use the latter to get and extend an existing style before overwriting it using `set()`.
+
+You can also set the default style to be used for any button that doesn't specify a `style` itself. On iOS the `ios` style is the default. Change it in your app's `alloy.js` like this:
+
+```javascript
+var Styles = require('nl.fokkezb.button/styles');
+Styles.setDefault('bs-default');
+```
 
 An example can be found in the demo app's `app/alloy.js` file.
 
@@ -162,6 +169,7 @@ To understand what properties are available and what they do, you need to unders
 | shadowOffset | Object | title, icon ||
 | shadowColor | String | title, icon ||
 | font | Font | title, icon | For the icon, `font.fontFamily` is ignored |
+| opacity | Numbe | outer ||
 
 ## Ideads for improvement
 Feel free to help me improve this widget by forking and submitting pull requests or issues with more ideas. Here's my whishlist:
