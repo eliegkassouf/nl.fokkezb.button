@@ -173,9 +173,15 @@ exports.fireEvent = $.trigger;
 exports.id = _id;
 
 if (arguments[0]) {
+	var args = arguments[0];
 	
-	if (arguments[0].id) {
-		_id = arguments[0].id;
+	if (args.id) {
+		_id = args.id;
+		delete args.id;
+	}
+	
+	if (!args.style) {
+		args.style = Styles.getDefault();
 	}
 	
 	applyProperties(arguments[0]);

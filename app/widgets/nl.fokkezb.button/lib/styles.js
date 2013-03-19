@@ -1,4 +1,4 @@
-var _default = "ios";
+var _default = OS_IOS ? "ios" : undefined;
 var _styles = {};
 
 _styles["ios"] = {
@@ -212,3 +212,6 @@ function set(style, properties) {
 exports.has = has;
 exports.get = get;
 exports.set = set;
+
+exports.getDefault = getDefault;
+exports.setDefault = setDefault;
