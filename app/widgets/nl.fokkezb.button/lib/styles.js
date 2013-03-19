@@ -1,3 +1,4 @@
+var _default = "ios";
 var _styles = {};
 
 _styles["ios"] = {
@@ -60,7 +61,8 @@ _styles["bs-default"] = {
 	
 	disabledStyle: {
 		backgroundGradient: undefined,
-		backgroundColor: "#e6e6e6"
+		backgroundColor: "#e6e6e6",
+		opacity: .65
 	}
 };
 
@@ -82,7 +84,8 @@ _styles["bs-primary"] = _.defaults({
 	
 	disabledStyle: {
 		backgroundGradient: undefined,
-		backgroundColor: "#0044cc"
+		backgroundColor: "#0044cc",
+		opacity: .65
 	}
 	
 }, _styles['bs-default']);
@@ -95,7 +98,8 @@ _styles["bs-info"] = _.defaults({
 	},
 	disabledStyle: {
 		backgroundGradient: undefined,
-		backgroundColor: "#2f96b4"
+		backgroundColor: "#2f96b4",
+		opacity: .65
 	}
 }, _styles['bs-primary']);
 
@@ -107,7 +111,8 @@ _styles["bs-success"] = _.defaults({
 	},
 	disabledStyle: {
 		backgroundGradient: undefined,
-		backgroundColor: "#51a351"
+		backgroundColor: "#51a351",
+		opacity: .65
 	}
 }, _styles['bs-primary']);
 
@@ -119,7 +124,8 @@ _styles["bs-warning"] = _.defaults({
 	},
 	disabledStyle: {
 		backgroundGradient: undefined,
-		backgroundColor: "#f89406"
+		backgroundColor: "#f89406",
+		opacity: .65
 	}
 }, _styles['bs-primary']);
 
@@ -131,7 +137,8 @@ _styles["bs-danger"] = _.defaults({
 	},
 	disabledStyle: {
 		backgroundGradient: undefined,
-		backgroundColor: "#bd362f"
+		backgroundColor: "#bd362f",
+		opacity: .65
 	}
 }, _styles['bs-primary']);
 
@@ -143,7 +150,8 @@ _styles["bs-inverse"] = _.defaults({
 	},
 	disabledStyle: {
 		backgroundGradient: undefined,
-		backgroundColor: "#222222"
+		backgroundColor: "#222222",
+		opacity: .65
 	}
 }, _styles['bs-primary']);
 
@@ -179,6 +187,14 @@ function _backgroundGradient(colors) {
 		endPoint: { x: '0%', y: '100%' },
 		colors: colors
 	}
+}
+
+function setDefault(style) {
+	_default = style;
+}
+
+function getDefault() {
+	return _default;
 }
 
 function has(style) {

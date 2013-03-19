@@ -58,7 +58,8 @@ function _applyOuterProperties(properties) {
 		'width', 'height',
 		'top', 'right', 'bottom', 'left', 'center',
 		'backgroundColor', 'backgroundGradient',
-		'borderColor', 'borderWidth', 'borderRadius'
+		'borderColor', 'borderWidth', 'borderRadius',
+		'opacity'
 	);
 
 	if (_.size(apply)) {
