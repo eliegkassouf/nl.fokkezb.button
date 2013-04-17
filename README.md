@@ -171,7 +171,7 @@ To understand what properties are available and what they do, you need to unders
 | font | Font | title, icon | For the icon, `font.fontFamily` is ignored |
 | opacity | Numbe | outer ||
 
-## Ideads for improvement
+## Ideas for improvement
 Feel free to help me improve this widget by forking and submitting pull requests or issues with more ideas. Here's my whishlist:
 
 * Add more custom and run-time style examples to the 4th tab.
