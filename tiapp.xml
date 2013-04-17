@@ -39,6 +39,7 @@
     </mobileweb>
     <modules/>
     <deployment-targets>
+        <target device="tizen">false</target>
         <target device="blackberry">false</target>
         <target device="android">true</target>
         <target device="ipad">true</target>

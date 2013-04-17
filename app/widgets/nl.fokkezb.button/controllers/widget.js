@@ -33,7 +33,7 @@ function applyProperties(properties) {
 	}
 	
 	if (_properties.icon) {
-		_icon = Alloy.createWidget("nl.fokkezb.button", "icon", _properties);
+		_icon = Widget.createController("icon", _properties);
 	}
 	
 	if (_icon && _properties.iconPosition !== 'right') {
@@ -41,7 +41,7 @@ function applyProperties(properties) {
 	}
 		
 	if (_properties.title) {
-		_title = Alloy.createWidget("nl.fokkezb.button", "title", _properties);
+		_title = Widget.createController("title", _properties);
 		$.inner.add(_title.getView());
 	}
 	

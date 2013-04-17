@@ -1,3 +1,5 @@
+var _ = require('Alloy')._;
+
 var _default = OS_IOS ? "ios" : undefined;
 var _styles = {};
 
