@@ -7,7 +7,7 @@ function applyProperties(properties) {
 	var apply = {};
 	
 	// First or changed IconFont
-	if (!IconicFont || (properties.iconFont && properties.iconFont != _iconFont)) {
+	if (!IconicFont || (properties.iconFont && properties.iconFont !== _iconFont)) {
 		
 		// Change IconFont
 		if (properties.iconFont) {
@@ -42,7 +42,7 @@ function applyProperties(properties) {
 	_.extend(apply, _.pick(properties, 'color', 'shadowOffset', 'shadowColor', 'font'));
 		
 	// Take font from properties or existing
-	apply.font = properties.font || $.icon.font;
+	apply.font = properties.font ? _.clone(properties.font) : $.icon.font;
 	
 	// Always overwrite fontFamily
 	apply.font.fontFamily = IconicFont.fontfamily();

@@ -20,7 +20,7 @@ How to use this widget in your own project?
 	
 ```javascript
 "dependencies": {
-	"nl.fokkezb.button": "1.0"
+	"nl.fokkezb.button": "1.0.3"
 }
 ```
 

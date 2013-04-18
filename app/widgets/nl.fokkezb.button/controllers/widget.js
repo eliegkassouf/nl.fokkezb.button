@@ -180,6 +180,9 @@ if (arguments[0]) {
 		delete args.id;
 	}
 	
+	delete args.__parentSymbol;
+	delete args['$model'];
+	
 	if (!args.style) {
 		args.style = Styles.getDefault();
 	}
