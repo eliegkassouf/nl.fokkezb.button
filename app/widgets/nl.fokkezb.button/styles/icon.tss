@@ -2,6 +2,6 @@
 	width: Ti.UI.SIZE,
 	height: Ti.UI.SIZE,
 	
-	touchEnabled: false
+	touchEnabled: false,
 	textAlign: Ti.UI.TEXT_VERTICAL_ALIGNMENT_BOTTOM,
 }
