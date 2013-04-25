@@ -1,5 +1,6 @@
 var Styles = require(WPATH('styles'));
 
+var _initted = false;
 var _id;
 var _icon, _title;
 var _properties = {};
@@ -15,39 +16,56 @@ function applyProperties(properties) {
 		$.outer.touchEnabled = false;
 		
 		if (_properties.disabledStyle) {
+			_properties.enabledStyle = _.pick(_properties, _.keys(_properties.disabledStyle));
 			_.extend(_properties, _properties.disabledStyle);
 		}
 		
-	} else if (_properties.activeStyle) {
-		_properties.defaultStyle = _.pick(_properties, _.keys(_properties.activeStyle));
+	} else {
+	    
+        if (properties.enabled === true) {
+            $.outer.touchEnabled = true;
+            
+            if (_properties.enabledStyle) {
+	           _.extend(_properties, _properties.enabledStyle);
+	           delete _properties.enabledStyle;
+	        }
+	    }
+	    
+	    if (_properties.activeStyle) {
+		  _properties.defaultStyle = _.pick(_properties, _.keys(_properties.activeStyle));
+		}
 	}
 	
-	if (_icon) {
-		$.inner.remove(_icon.getView());
-		_icon = null;
-	}
+	if (!_initted) {
+	    _initted = true;
+	    
+	    if (_properties.icon) {
+            _icon = Widget.createController("icon", _properties)
+        }
 	
-	if (_title) {
-		$.inner.remove(_title.getView());
-		_title = null;
-	}
-	
-	if (_properties.icon) {
-		_icon = Widget.createController("icon", _properties);
-	}
-	
-	if (_icon && _properties.iconPosition !== 'right') {
-		$.inner.add(_icon.getView());
-	}
-		
-	if (_properties.title) {
-		_title = Widget.createController("title", _properties);
-		$.inner.add(_title.getView());
-	}
-	
-	if (_icon && _properties.iconPosition === 'right') {
-		$.inner.add(_icon.getView());
-	}
+    	if (_icon && _properties.iconPosition !== 'right') {
+    		$.inner.add(_icon.getView());
+    	}
+    		
+    	if (_properties.title) {
+    		_title = Widget.createController("title", _properties);
+    		$.inner.add(_title.getView());
+    	}
+    	
+    	if (_icon && _properties.iconPosition === 'right') {
+    		$.inner.add(_icon.getView());
+    	}
+    	
+    } else {
+        
+        if (_icon) {
+            _icon.applyProperties(_properties);
+        }
+        
+        if (_title) {
+            _title.applyProperties(_properties);
+        }
+    }
 	
 	_applyOuterProperties(_properties);
 	_applyInnerProperties(_properties);
@@ -59,7 +77,7 @@ function _applyOuterProperties(properties) {
 		'top', 'right', 'bottom', 'left', 'center',
 		'backgroundColor', 'backgroundGradient',
 		'borderColor', 'borderWidth', 'borderRadius',
-		'opacity'
+		'opacity', 'visible'
 	);
 
 	if (_.size(apply)) {
@@ -163,6 +181,8 @@ function _onTouchend(e) {
 
 // Public interface methods
 exports.applyProperties = applyProperties;
+exports.hide = $.outer.hide;
+exports.show = $.outer.show;
  
 // Support Titanium event methods
 exports.addEventListener = $.on;
@@ -183,7 +203,7 @@ if (arguments[0]) {
 	delete args.__parentSymbol;
 	delete args['$model'];
 	
-	if (!args.style) {
+	if (args.style === undefined) {
 		args.style = Styles.getDefault();
 	}
 	

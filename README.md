@@ -20,7 +20,7 @@ How to use this widget in your own project?
 	
 ```javascript
 "dependencies": {
-	"nl.fokkezb.button": "1.0.3"
+	"nl.fokkezb.button": "1.0.4"
 }
 ```
 
@@ -169,7 +169,15 @@ To understand what properties are available and what they do, you need to unders
 | shadowOffset | Object | title, icon ||
 | shadowColor | String | title, icon ||
 | font | Font | title, icon | For the icon, `font.fontFamily` is ignored |
-| opacity | Numbe | outer ||
+| opacity | Number | outer ||
+| visible | Boolean | outer ||
+
+### Titanium-common methods
+
+Supported common methods:
+
+* show()
+* hide()
 
 ## Ideads for improvement
 Feel free to help me improve this widget by forking and submitting pull requests or issues with more ideas. Here's my whishlist:

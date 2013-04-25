@@ -6,6 +6,6 @@
     "os:ios": {},
     "os:android": {},
     "dependencies": {
-        "nl.fokkezb.button": "1.0"
+        "nl.fokkezb.button": "1.0.4"
     }
 }

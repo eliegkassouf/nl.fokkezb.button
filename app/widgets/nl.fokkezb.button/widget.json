@@ -6,7 +6,7 @@
 	"version": "1.0",
 	"copyright":"Copyright (c) 2013",
 	"license":"Apache License, Version 2.0",
-	"min-alloy-version": "1.0.3",
+	"min-alloy-version": "1.0.4",
 	"min-titanium-version":"3.0",
 	"tags":"button,icon,style",
 	"platforms":"android,ios"
