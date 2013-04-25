@@ -182,8 +182,12 @@ function _onTouchend(e) {
 // Public interface methods
 exports.applyProperties = applyProperties;
 exports.hide = $.outer.hide;
-exports.show = $.outer.show;
- 
+
+exports.show = function () {
+    delete _properties.visible;
+    $.outer.show();
+}
+
 // Support Titanium event methods
 exports.addEventListener = $.on;
 exports.removeEventListener = $.off;
