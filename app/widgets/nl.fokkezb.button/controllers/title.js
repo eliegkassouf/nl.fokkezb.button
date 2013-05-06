@@ -7,6 +7,11 @@ function applyProperties(properties) {
 	
 	_.extend(apply, _.pick(properties, 'color', 'font', 'shadowColor', 'shadowOffset'));
 	
+	// Font needs to be cloned
+    if (properties.font) {
+        apply.font = _.clone(properties.font);
+    }
+	
 	if (_.size(apply)) {
 		$.title.applyProperties(apply);
 	}

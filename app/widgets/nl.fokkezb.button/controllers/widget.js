@@ -71,6 +71,33 @@ function applyProperties(properties) {
 	_applyInnerProperties(_properties);
 }
 
+function setTitle(title) {
+    
+    if (!_initted || !_title) {
+        return false;
+    }
+    
+    _title.applyProperties({
+        title: title
+    });
+    
+    return true;
+}
+
+function setIcon(icon, iconFont) {
+    
+    if (!_initted || !_icon) {
+        return false;
+    }
+    
+    _icon.applyProperties({
+        icon: icon,
+        iconFont: iconFont
+    });
+    
+    return true;
+}
+
 function _applyOuterProperties(properties) {
 	var apply = _.pick(properties,
 		'width', 'height',
@@ -182,6 +209,8 @@ function _onTouchend(e) {
 // Public interface methods
 exports.applyProperties = applyProperties;
 exports.hide = $.outer.hide;
+exports.setTitle = setTitle;
+exports.setIcon = setIcon;
 
 exports.show = function () {
     delete _properties.visible;

@@ -20,7 +20,7 @@ How to use this widget in your own project?
 	
 ```javascript
 "dependencies": {
-	"nl.fokkezb.button": "1.0.4"
+	"nl.fokkezb.button": "1.1"
 }
 ```
 
@@ -146,6 +146,7 @@ To understand what properties are available and what they do, you need to unders
 | title | String | Optional text for the title of the button |
 | icon | String | Optional icon name (e.g. `icon-lightbulb`)
 | iconFont | String | One of IconicFont's lib's (without `.js`). Defaults to `FontAwesome`. |
+| iconSize | Number | Font size for the icon, overruling the button fontSize |
 | iconPosition | String | Positions the icon to the `left` (default) or the `right` of the title |
 | padding | Number/String/Object | Padding between the outer and the inner. Either pass one dimension, a list of 1 to 4 dimensions or an object containing one of `top`, `right`, `bottom` and `left` as keys and their dimension as values. Don't use padding if you specify a width and height and want the inner to be centered in the outer. |
 | spacing | Number/String | Spacing between the icon and the title |
@@ -168,16 +169,23 @@ To understand what properties are available and what they do, you need to unders
 | color | String | title, icon ||
 | shadowOffset | Object | title, icon ||
 | shadowColor | String | title, icon ||
-| font | Font | title, icon | For the icon, `font.fontFamily` is ignored |
+| font | Font | title, icon | For the icon, `font.fontFamily` is ignored and `font.fontSize` can be overrulled by `iconSize` |
 | opacity | Number | outer ||
 | visible | Boolean | outer ||
 
-### Titanium-common methods
+### Public interface
 
-Supported common methods:
-
-* show()
-* hide()
+| Method | Description |
+| ------ | ----------- |
+| applyProperties() | Main method for setting up and changing the button |
+| show() | Shows button |
+| hide() | Hides button |
+| setIcon([icon], ]iconFont]) | Changes the icon |
+| setTitle(title) | Changes the title |
+| addEventListener(event, callback) | Attaches event listener |
+| removeEventListener(event, callback) | Removes event listener |
+| fireEvent(event, dictionary) | Fires event on the button |
+| id | Holds the `id` of the widget, so you have this in events |
 
 ## Ideas for improvement
 Feel free to help me improve this widget by forking and submitting pull requests or issues with more ideas. Here's my whishlist:
