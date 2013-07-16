@@ -1,0 +1,5 @@
+<Alloy>
+	<View id="outer" onTouchstart="_onTouchstart" onTouchcancel="_onTouchend" onTouchend="_onTouchend">
+		<View id="inner" />
+	</View>
+</Alloy>
