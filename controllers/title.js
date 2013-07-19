@@ -21,7 +21,7 @@ function applyProperties(properties) {
 		apply.width = Ti.UI.FILL;
 	}
 	
-	// verticalAlign only works with fixed height
+	// verticalAlign only works with fixed width
 	if (properties.verticalAlign !== undefined && (properties.height || $.title.height !== 'SIZE')) {
 		apply.verticalAlign = properties.verticalAlign;
 		apply.height = Ti.UI.FILL;
