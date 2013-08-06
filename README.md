@@ -12,7 +12,7 @@ The repository contains two branches. This master branch contains the widget. Th
 ## Quick start
 How to use this widget in your own project?
 
-* [Download](https://github.com/FokkeZB/nl.fokkezb.pullToRefresh/releases) the latest version of this repository.
+* [Download](https://github.com/FokkeZB/nl.fokkezb.button/releases) the latest release of the widget.
 * Copy `app/widgets/nl.fokkezb.button` to your app's `app/widgets` folder.
 * Add the widget as a dependency to your app's `app/config.json` file:
 	
