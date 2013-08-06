@@ -85,11 +85,13 @@ function applyProperties(_properties) {
 			});
 		}
 		
+		icon = _properties.icon || icon;
+
 		// Always set text
 		_apply.text = IconicFont.icon(icon);
 		
 		// Clone nested object
-		_apply.font = _properties.font ? _.clone(_properties.font) : $.icon.font;
+		_apply.font = _properties.font ? _.clone(_properties.font) : {};
 		
 		// Overwrite fontSize by iconSize if given
 		if (_properties.iconSize) {
