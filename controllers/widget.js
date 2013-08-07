@@ -1,7 +1,6 @@
 var Styles = require(WPATH('styles'));
 
 var _initted = false;
-var _id;
 var _icon, _title;
 var _properties = {};
 
@@ -205,6 +204,10 @@ function _onTouchstart(e) {
 		_applyOuterProperties(_properties.activeStyle);
 		_applyInnerProperties(_properties.activeStyle);
 	}
+
+    if (_properties.sound) {
+        _properties.sound.play();
+    }
 }
 
 function _onTouchend(e) {
@@ -226,7 +229,7 @@ function _onTouchend(e) {
 	if (e.type === 'touchend') {
 		$.trigger('click', {
 			type: "click",
-			source: exports
+			source: $
 		});
 	}
 }
@@ -250,17 +253,18 @@ exports.removeEventListener = $.off;
 exports.fireEvent = $.trigger;
 
 // Export ID so it's available in e.source.id
-exports.id = _id;
+exports.id = null;
 
 if (arguments[0]) {
 	var args = arguments[0];
 	
 	if (args.id) {
-		_id = args.id;
+		exports.id = args.id;
 		delete args.id;
 	}
 	
 	delete args.__parentSymbol;
+	delete args.__itemTemplate;
 	delete args['$model'];
 	
 	if (args.style === undefined) {
