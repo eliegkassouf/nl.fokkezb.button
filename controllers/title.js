@@ -1,12 +1,19 @@
+var titleid;
+
+if (arguments[0]) {
+	applyProperties(arguments[0]);
+}
+
 function applyProperties(properties) {
 	var apply = {};
 
 	if (properties.title) {
 		apply.text = properties.title;
-	}
-	
-	if (properties.titleid) {
+		titleid = null;
+
+	} else if (properties.titleid) {
 		apply.text = L(properties.titleid);
+		titleid = properties.titleid;
 	}
 	
 	if (properties.upperCase) {
@@ -37,8 +44,40 @@ function applyProperties(properties) {
 	}
 }
 
-if (arguments[0]) {
-	applyProperties(arguments[0]);
+/*** TITLE ***/
+
+function setTitle(title) {
+    
+    return applyProperties({
+        title: title
+    });
 }
 
+function getTitle() {
+
+	return $.title.text;
+}
+
+/*** TITLEID ***/
+
+function setTitleid(titleid) {
+    
+    return applyProperties({
+        titleid: titleid
+    });
+}
+
+function getTitleid() {
+
+	return titleid;
+}
+
+/*** EXPORTS ***/
+
 exports.applyProperties = applyProperties;
+
+exports.getTitle = getTitle;
+exports.setTitle = setTitle;
+
+exports.getTitleid = getTitleid;
+exports.setTitleid = setTitleid;

@@ -18,7 +18,7 @@ How to use this widget in your own project?
 	
 ```javascript
 "dependencies": {
-	"nl.fokkezb.button": "1.2"
+	"nl.fokkezb.button": "1.2.1"
 }
 ```
 
@@ -186,9 +186,13 @@ To understand what properties are available and what they do, you need to unders
 | show() | Shows button |
 | hide() | Hides button |
 | setIcon([icon], ]iconFont]) | Changes the icon |
+| getIcon() | Returns an `{ icon:, iconFont }` object |
 | setTitle(title) | Changes the title |
+| getTitle() | Returns the title |
 | setTitleid(titleid) | Changes the titleid |
+| getTitleid() | Returns the titleid |
 | setStyle(style) | Applies the style |
+| getStyle() | Returns the style name |
 | addEventListener(event, callback) | Attaches event listener |
 | removeEventListener(event, callback) | Removes event listener |
 | fireEvent(event, dictionary) | Fires event on the button |
@@ -207,6 +211,7 @@ Feel free to help me improve this widget by forking and submitting pull requests
 
 ## Changelog
 
+* 1.2.1 Fixed icon-bug, added new setters and getters
 * 1.2 Added image icons, titleid, setStyle, backgroundImage, textAlign, verticalAlign
 * 1.1 Added iconSize, setTitle, setIcon
 * 1.0 Initial version
