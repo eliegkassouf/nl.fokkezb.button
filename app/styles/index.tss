@@ -53,6 +53,10 @@
 	top: "10dp"
 }
 
+"Widget": {
+	top: "10dp"
+}
+
 // Bug: https://jira.appcelerator.org/browse/TC-1945
 "Require": {
 	top: "10dp"

@@ -1,6 +1,6 @@
 <Alloy>
 	<TabGroup>
-		<Tab title="System" icon="icons/light_appcelerator.png">
+		<Tab title="System" icon="/icons/light_appcelerator.png">
 			<Window title="System style">
             	<ScrollView class="columns">
 					<View class="half">
@@ -11,12 +11,12 @@
 					<View class="half">
 						<Label>Widget</Label>
 						<Widget src="nl.fokkezb.button" onClick="doClick" title="Enabled" style="ios" />
-						<Widget src="nl.fokkezb.button" onClick="doClick" title="Disabled" style="ios" class="disabled"/>
+						<Widget src="nl.fokkezb.button" onClick="doClick" title="Disabled" style="ios" class="disabled" />
 					</View>
                </ScrollView>
             </Window>
         </Tab>
-        <Tab title="Bootstrap" icon="icons/light_bird.png">
+        <Tab title="Bootstrap" icon="/icons/light_bird.png">
             <Window title="Bootstrap style">
             	<ScrollView class="columns">
             		<View class="half">
@@ -44,7 +44,7 @@
 				</ScrollView>
             </Window>
         </Tab>
-        <Tab title="Icons" icon="icons/light_info.png">
+        <Tab title="Icons" icon="/icons/light_info.png">
             <Window title="Icons">
             	<ScrollView>
 					<Widget src="nl.fokkezb.button" onClick="doClick" title="Left (default)" style="bs-default" icon="icon-off" />
@@ -53,7 +53,7 @@
             	</ScrollView>
             </Window>
     	</Tab>
-    	<Tab title="Custom" icon="icons/light_gears.png">
+    	<Tab title="Custom" icon="/icons/light_gears.png">
             <Window title="Custom">
             	<ScrollView>
             		<Widget src="nl.fokkezb.button" onClick="doClick" title="TSS styling" id="custom" />
