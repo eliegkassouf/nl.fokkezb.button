@@ -1,0 +1,6 @@
+"#iconWrap": {
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	
+	touchEnabled: false
+}

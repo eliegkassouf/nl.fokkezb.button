@@ -1,0 +1,13 @@
+{
+	"id": "nl.fokkezb.button",
+	"name": "nl.fokkezb.button",
+	"description" : "Replacement for Ti.UI.Button with better support for styling and icons",
+	"author": "Fokke Zandbergen",
+	"version": "1.2.1",
+	"copyright":"Copyright (c) 2013",
+	"license":"Apache License, Version 2.0",
+	"min-alloy-version": "1.0",
+	"min-titanium-version":"3.0",
+	"tags":"button,icon,style",
+	"platforms":"android,ios"
+}
