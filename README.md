@@ -18,7 +18,7 @@ How to use this widget in your own project?
 	
 ```javascript
 "dependencies": {
-	"nl.fokkezb.button": "1.2.2"
+	"nl.fokkezb.button": "1.3"
 }
 ```
 
@@ -127,9 +127,12 @@ $.myId.addEventListener('click', myCallback);
 The callback receives an Object containing 2 properties:
 
 * `type`: Always `click`.
-* `source`: The widget's main controller. Use `e.source.id` to get the id-attribute used in `<Widget />`.
+* `bubbles`: Always `FALSE`.
+* `source`: The widget's main controller, including all non-object properties defined via XML or TSS.
 
 An example can be found in the demo app's `app/controllers/index.js` file.
+
+Since 1.3, when listening to a parent of the button, the `e.source` will also contain all non-object properties defined for the widget via XML or TSS.
 
 ## Property reference
 To understand what properties are available and what they do, you need to understand how the button is constructed. The next illustration shows the outer (purple), inner (red), icon (blue) and title (green) elements and where padding and spacing is applied.
@@ -212,6 +215,7 @@ Feel free to help me improve this widget by forking and submitting pull requests
 
 ## Changelog
 
+* 1.3 Exposing creation properties via `e.source`. Fixed Android pass throughs.
 * 1.2.2 Fixed iconSize not being retained. Added bubbleParent.
 * 1.2.1 Fixed icon-bug, added new setters and getters
 * 1.2 Added image icons, titleid, setStyle, backgroundImage, textAlign, verticalAlign
