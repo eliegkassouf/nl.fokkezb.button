@@ -18,7 +18,7 @@ How to use this widget in your own project?
 	
 ```javascript
 "dependencies": {
-	"nl.fokkezb.button": "1.2.1"
+	"nl.fokkezb.button": "1.2.2"
 }
 ```
 
@@ -177,6 +177,7 @@ To understand what properties are available and what they do, you need to unders
 | verticalAlign | String | title | Only when height is set
 | opacity | Number | outer ||
 | visible | Boolean | outer ||
+| bubbleParent | Boolean | outer ||
 
 ### Public interface
 
@@ -211,6 +212,7 @@ Feel free to help me improve this widget by forking and submitting pull requests
 
 ## Changelog
 
+* 1.2.2 Fixed iconSize not being retained. Added bubbleParent.
 * 1.2.1 Fixed icon-bug, added new setters and getters
 * 1.2 Added image icons, titleid, setStyle, backgroundImage, textAlign, verticalAlign
 * 1.1 Added iconSize, setTitle, setIcon

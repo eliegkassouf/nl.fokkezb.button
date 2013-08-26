@@ -181,7 +181,8 @@ function _applyOuterProperties(properties) {
         'top', 'right', 'bottom', 'left', 'center',
         'backgroundColor', 'backgroundGradient', 'backgroundImage', 'backgroundLeftCap', 'backgroundTopCap', 'backgroundRepeat',
         'borderColor', 'borderWidth', 'borderRadius',
-        'opacity', 'visible'
+        'opacity', 'visible',
+        'bubbleParent'
     );
 
     if (_.size(apply)) {
