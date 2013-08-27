@@ -168,6 +168,12 @@ function getIcon() {
     return _icon.getIcon();
 }
 
+function hide() {
+    $.outer.hide();
+
+    return;
+}
+
 function show() {
     delete _properties.visible;
     $.outer.show();
@@ -302,8 +308,8 @@ Object.defineProperty($, "style", {
 });
 
 // HIDE & SHOW
-exports.hide = $.outer.hide;
-exports.show = show();
+exports.hide = hide;
+exports.show = show;
 
 // TITLE
 exports.setTitle = setTitle;
