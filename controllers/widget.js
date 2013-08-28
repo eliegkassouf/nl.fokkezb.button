@@ -65,7 +65,8 @@ function applyProperties(properties) {
         }
 
         if (_properties.activeStyle) {
-            _properties.defaultStyle = _.pick(_properties, _.keys(_properties.activeStyle));
+            _properties.defaultStyle = _.clone(_properties);
+            _properties.activeStyle = _.extend({}, _properties, _properties.activeStyle);
         }
     }
 
