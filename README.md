@@ -1,4 +1,4 @@
-# Button widget
+# Button widget [![Titanium](http://www-static.appcelerator.com/badges/titanium-git-badge-sq.png)](http://www.appcelerator.com/titanium/) [![Alloy](http://www-static.appcelerator.com/badges/alloy-git-badge-sq.png)](http://www.appcelerator.com/alloy/)
 This widget for the [Appcelerator](http://www.appcelerator.com) Titanium Alloy MVC framework provides a view that mimics `Ti.UI.Button`, but with more flexible styling and support for icon fonts.
 
 ![demo](https://github.com/fokkezb/nl.fokkezb.button/raw/master/docs/demo.png)
@@ -9,18 +9,14 @@ The repository contains two branches. This master branch contains the widget. Th
 * `app/lib`: The [IconicFont](https://github.com/k0sukey/TiIconicFont) lib folder, required for using icons.
 * `app/assets/fonts`: Thef [Font Awesome](http://fortawesome.github.com/Font-Awesome/) font folder - one of the three icon fonts supported by IconicFont.
 
-## Quick start
-How to use this widget in your own project?
+## Quick Start
 
-* [Download](https://github.com/FokkeZB/nl.fokkezb.button/releases) the latest release of the widget.
-* Copy `app/widgets/nl.fokkezb.button` to your app's `app/widgets` folder.
-* Add the widget as a dependency to your app's `app/config.json` file:
-	
-```javascript
-"dependencies": {
-	"nl.fokkezb.button": "1.3"
-}
-```
+### Get it [![gitTio](http://gitt.io/badge.png)](http://gitt.io/component/nl.fokkezb.button)
+Download this repository and consult the [Alloy Documentation](http://docs.appcelerator.com/titanium/latest/#!/guide/Alloy_XML_Markup-section-35621528_AlloyXMLMarkup-ImportingWidgets) on how to install it, or simply use the [gitTio CLI](http://gitt.io/cli):
+
+`$ gittio install nl.fokkezb.button`
+
+### Use it
 
 * Require the widget in a view:
 
