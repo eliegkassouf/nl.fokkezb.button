@@ -166,6 +166,7 @@ _styles["bs-link"] = {
 	spacing: "6dp",
 			
 	borderColor: "#ffffff",
+	borderWidth: "1dp",
 	borderSize: "1dp",
 
 	backgroundColor: "#ffffff",

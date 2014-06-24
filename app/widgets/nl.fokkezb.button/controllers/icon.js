@@ -160,3 +160,4 @@ if (arguments[0]) {
 
 exports.applyProperties = applyProperties;
 exports.getIcon = getIcon;
+exports.setIcon = setIcon;
