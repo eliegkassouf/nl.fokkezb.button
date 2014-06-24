@@ -7,7 +7,6 @@
 exports.cliVersion = '>=3.X';
 
 exports.init = function (logger, config, cli, appc) {
-
 	var path = require('path'),
 		fs = require('fs'),
 		afs = appc.fs,
@@ -19,7 +18,7 @@ exports.init = function (logger, config, cli, appc) {
 		spawn = require('child_process').spawn,
 		parallel = appc.async.parallel;
 
-	function run(deviceFamily, deployType, finished) {
+	function run(deviceFamily, deployType, target, finished) {
 		var appDir = path.join(cli.argv['project-dir'], 'app');
 		if (!afs.exists(appDir)) {
 			logger.info(__('Project not an Alloy app, continuing'));
@@ -36,26 +35,27 @@ exports.init = function (logger, config, cli, appc) {
 		}
 		fs.writeFileSync(path.join(buildDir, '.alloynewcli'), '');
 
-		var compilerCommand = afs.resolvePath(__dirname, '..', 'Alloy', 'commands', 'compile', 'index.js'),
+		var cRequire = afs.resolvePath(__dirname, '..', 'Alloy', 'commands', 'compile', 'index.js'),
 			config = {
 				platform: /(?:iphone|ipad)/.test(cli.argv.platform) ? 'ios' : cli.argv.platform,
 				version: '0',
 				simtype: 'none',
 				devicefamily: /(?:iphone|ios)/.test(cli.argv.platform) ? deviceFamily : 'none',
-				deploytype: deployType || cli.argv['deploy-type'] || 'development'
+				deploytype: deployType || cli.argv['deploy-type'] || 'development',
+				target: target
 			};
 
 		config = Object.keys(config).map(function (c) {
 			return c + '=' + config[c];
 		}).join(',');
 
-		if (afs.exists(compilerCommand)) {
+		if (afs.exists(cRequire)) {
 			// we're being invoked from the actual alloy directory!
 			// no need to subprocess, just require() and run
 			var origLimit = Error.stackTraceLimit;
 			Error.stackTraceLimit = Infinity;
 			try {
-				require(compilerCommand)({}, {
+				require(cRequire)({}, {
 					config: config,
 					outputPath: cli.argv['project-dir'],
 					_version: pkginfo.version
@@ -75,13 +75,13 @@ exports.init = function (logger, config, cli, appc) {
 			var paths = {};
 			parallel(this, ['alloy', 'node'].map(function (bin) {
 				return function (done) {
-					var envName = 'ALLOY_' + (bin == 'node' ? 'NODE_' : '') + 'PATH';
+					var envName = 'ALLOY_' + (bin === 'node' ? 'NODE_' : '') + 'PATH';
 
 					paths[bin] = process.env[envName];
 					if (paths[bin]) {
 						done();
-					} else if (process.platform == 'win32') {
-						paths['alloy'] = 'alloy.cmd';
+					} else if (process.platform === 'win32') {
+						paths.alloy = 'alloy.cmd';
 						done();
 					} else {
 						exec('which ' + bin, function (err, stdout, strerr) {
@@ -92,7 +92,7 @@ exports.init = function (logger, config, cli, appc) {
 								parallel(this, [
 									'/usr/local/bin/' + bin,
 									'/opt/local/bin/' + bin,
-									path.join(process.env['HOME'], 'local/bin', bin),
+									path.join(process.env.HOME, 'local/bin', bin),
 									'/opt/bin/' + bin,
 									'/usr/bin/' + bin
 								].map(function (p) {
@@ -153,10 +153,28 @@ exports.init = function (logger, config, cli, appc) {
 	}
 
 	cli.addHook('build.pre.compile', function (build, finished) {
-		run(build.deviceFamily, build.deployType, finished);
+		// TODO: Remove this workaround when the CLI reports the right deploy type for android
+		var deployType = build.deployType;
+		var target = build.target;
+
+		if (cli.argv.platform === 'android') {
+			switch(target) {
+				case 'dist-playstore':
+					deployType = 'production';
+					break;
+				case 'device':
+					deployType = 'test';
+					break;
+				case 'emulator':
+				default:
+					deployType = 'development';
+					break;
+			}
+		}
+		run(build.deviceFamily, deployType, target, finished);
 	});
 
 	cli.addHook('codeprocessor.pre.run', function (build, finished) {
-		run('none', 'development', finished);
+		run('none', 'development', undefined, finished);
 	});
 };
