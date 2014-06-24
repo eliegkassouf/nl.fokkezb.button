@@ -84,11 +84,6 @@ function applyProperties(_properties) {
 			if (_properties.iconFont) {
 				iconFont = _properties.iconFont;
 			}
-
-			IconicFont = require('IconicFont').IconicFont({
-				font: iconFont,
-				ligature: false
-			});
 		}
 
 		// Clone nested object
@@ -100,7 +95,7 @@ function applyProperties(_properties) {
 		}
 
 		// Always overwrite fontFamily
-		_apply.font.fontFamily = IconicFont.fontfamily();
+		_apply.font.fontFamily = iconFont;
 
 		_.extend(_apply, _.pick(_properties, 'color', 'shadowOffset', 'shadowColor'));
 
@@ -108,7 +103,7 @@ function applyProperties(_properties) {
 		if (_properties.icon) {
 			icon = _properties.icon;
 
-			_apply.text = IconicFont.icon(icon);
+			_apply.text = icon;
 
 			if (!view || type !== 'font') {
 				_view = Ti.UI.createLabel(_.extend({

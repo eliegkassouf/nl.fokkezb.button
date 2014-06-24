@@ -3,7 +3,7 @@
 	"name": "nl.fokkezb.button",
 	"description" : "Replacement for Ti.UI.Button with better support for styling and icons",
 	"author": "Fokke Zandbergen",
-	"version": "1.3",
+	"version": "1.4",
 	"copyright":"Copyright (c) 2013",
 	"license":"Apache License, Version 2.0",
 	"min-alloy-version": "1.0",
