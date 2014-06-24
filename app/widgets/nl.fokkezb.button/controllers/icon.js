@@ -2,7 +2,8 @@ var IconicFont,
 	view,
 	type = 'font',
 	icon = 'icon-sign-blank',
-	iconFont = 'FontAwesome';
+	iconFont = 'FontAwesome',
+	iconSize;
 
 function applyProperties(_properties) {
 	var _apply = {}, _view;
@@ -17,22 +18,27 @@ function applyProperties(_properties) {
 		}
 	}
 
+	// iconSize
+	if (typeof _properties.iconSize !== 'undefined') {
+		iconSize = _properties.iconSize;
+	}
+
 	// Image
 	if (type === 'image' || (_properties.icon && _properties.icon.indexOf('.') !== -1)) {
 
 		// Use iconSize as dimenions
-		if (_properties.iconSize) {
+		if (iconSize) {
 
-			if (_.isArray(_properties.iconSize)) {
-				_apply.width = _properties.iconSize[0];
-				_apply.height = _properties.iconSize[1];
+			if (_.isArray(iconSize)) {
+				_apply.width = iconSize[0];
+				_apply.height = iconSize[1];
 
-			} else if (_.isObject(_properties.iconSize)) {
-				_properties.iconSize.width && (_apply.width = _properties.iconSize.width);
-				_properties.iconSize.height && (_apply.height = _properties.iconSize.height);
+			} else if (_.isObject(iconSize)) {
+				iconSize.width && (_apply.width = iconSize.width);
+				iconSize.height && (_apply.height = iconSize.height);
 
 			} else {
-				_apply.width = _apply.height = _properties.iconSize;
+				_apply.width = _apply.height = iconSize;
 			}
 		}
 
@@ -78,23 +84,18 @@ function applyProperties(_properties) {
 			if (_properties.iconFont) {
 				iconFont = _properties.iconFont;
 			}
-
-			IconicFont = require('IconicFont').IconicFont({
-				font: iconFont,
-				ligature: false
-			});
 		}
 
 		// Clone nested object
 		_apply.font = _properties.font ? _.clone(_properties.font) : ($.iconWrap.font || {});
 
 		// Overwrite fontSize by iconSize if given
-		if (_properties.iconSize) {
-			_apply.font.fontSize = _properties.iconSize;
+		if (iconSize) {
+			_apply.font.fontSize = iconSize;
 		}
 
 		// Always overwrite fontFamily
-		_apply.font.fontFamily = IconicFont.fontfamily();
+		_apply.font.fontFamily = iconFont;
 
 		_.extend(_apply, _.pick(_properties, 'color', 'shadowOffset', 'shadowColor'));
 
@@ -102,7 +103,7 @@ function applyProperties(_properties) {
 		if (_properties.icon) {
 			icon = _properties.icon;
 
-			_apply.text = IconicFont.icon(icon);
+			_apply.text = icon;
 
 			if (!view || type !== 'font') {
 				_view = Ti.UI.createLabel(_.extend({

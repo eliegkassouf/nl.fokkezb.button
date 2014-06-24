@@ -3,6 +3,12 @@
 	enabled: false
 }
 
+// Icon buttons
+".icon": {
+	iconFont: 'FontAwesome',
+	icon: Alloy.Globals.fa.powerOff
+}
+
 // Demo of custom TSS styling
 "#custom": {
 	width: "100dp",
