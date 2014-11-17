@@ -80,7 +80,7 @@ function applyProperties(properties) {
             $.inner.add(_icon.getView());
         }
 
-        if (_properties.title || _properties.titleid) {
+        if (_properties.title !== undefined || _properties.titleid !== undefined) {
             _title = Widget.createController("title", _properties);
             $.inner.add(_title.getView());
         }
