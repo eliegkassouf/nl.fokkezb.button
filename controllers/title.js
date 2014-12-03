@@ -17,7 +17,7 @@ function applyProperties(properties) {
 	}
 	
 	if (properties.upperCase) {
-		apply.text = apply.toUpperCase();
+		apply.text = apply.text.toUpperCase();
 	}
 
 	_.extend(apply, _.pick(properties, 'color', 'font', 'shadowColor', 'shadowOffset'));
@@ -42,6 +42,8 @@ function applyProperties(properties) {
 	if (_.size(apply)) {
 		$.title.applyProperties(apply);
 	}
+	
+	
 }
 
 /*** TITLE ***/
