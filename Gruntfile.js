@@ -52,6 +52,6 @@ module.exports = function(grunt) {
   grunt.registerTask('iphone', ['update', 'titanium:iphone']);
   grunt.registerTask('android', ['update', 'titanium:android']);
   
-  grunt.registerTask('default', ['ipad']);
+  grunt.registerTask('default', ['iphone']);
 
 };
