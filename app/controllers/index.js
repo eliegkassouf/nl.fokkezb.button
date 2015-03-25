@@ -6,4 +6,8 @@ function doClick(e) {
     return;
 }
 
+function test25(e) {
+  $.test25.hide();
+}
+
 $.index.open();

@@ -63,7 +63,9 @@
         <Tab title="Tests">
             <Window title="Test">
                 <ScrollView>
-                    <Label>#24</Label>
+                    <Label>#25 (hide)</Label>
+                    <Widget id="test25" src="nl.fokkezb.button" title="Title button" onClick="test25" />
+                    <Label>#24 (center)</Label>
                     <Widget src="nl.fokkezb.button" title="Title button" style="bs-default" width="220" height="40" textAlign="Ti.UI.TEXT_ALIGNMENT_CENTER" />
                 </ScrollView>
             </Window>
