@@ -7,17 +7,17 @@ if (arguments[0]) {
 function applyProperties(properties) {
 	var apply = {};
 
-	if (properties.title) {
+	if (properties.title !== undefined) {
 		apply.text = properties.title;
 		titleid = null;
 
-	} else if (properties.titleid) {
-		apply.text = L(properties.titleid);
+	} else if (properties.titleid !== undefined) {
+		apply.text = properties.titleid ? L(properties.titleid) : '';
 		titleid = properties.titleid;
 	}
 	
 	if (properties.upperCase) {
-		apply.text = apply.toUpperCase();
+		apply.text = apply.text.toUpperCase();
 	}
 
 	_.extend(apply, _.pick(properties, 'color', 'font', 'shadowColor', 'shadowOffset'));
@@ -42,6 +42,8 @@ function applyProperties(properties) {
 	if (_.size(apply)) {
 		$.title.applyProperties(apply);
 	}
+	
+	
 }
 
 /*** TITLE ***/

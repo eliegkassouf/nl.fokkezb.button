@@ -81,7 +81,7 @@ An example can be found in the demo app's `app/alloy.js` file.
 Of course you can also style the widget like any other view using the `TSS` file of the controller-view where your require the widget. Just set a `class` or `id` to the `<Widget />` and style it like this:
 
 ```javascript
-"#myButton:" {
+"#myButton": {
 	borderWidth: 1,
 	borderColor: '#000',
 	backgroundColor: '#ccc',
