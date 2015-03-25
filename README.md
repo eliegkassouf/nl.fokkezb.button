@@ -4,10 +4,7 @@ This widget for the [Appcelerator](http://www.appcelerator.com) Titanium Alloy M
 ![demo](https://github.com/fokkezb/nl.fokkezb.button/raw/master/docs/demo.png)
 
 ## The repository
-The repository contains two branches. This master branch contains the widget. The other `app` branch has a complete Titanium Alloy demo project, including the widget as submodule and some optional external libs and assets:
-
-* `app/lib`: The [IconicFont](https://github.com/k0sukey/TiIconicFont) lib folder, required for using icons.
-* `app/assets/fonts`: Thef [Font Awesome](http://fortawesome.github.com/Font-Awesome/) font folder - one of the three icon fonts supported by IconicFont.
+The repository contains two branches. This master branch contains the widget. The other [test](https://github.com/FokkeZB/nl.fokkezb.button/tree/test) branch has a complete Titanium Alloy demo/test project.
 
 ## Quick Start
 
