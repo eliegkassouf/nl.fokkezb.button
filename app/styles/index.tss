@@ -67,3 +67,15 @@
 "Require": {
 	top: "10dp"
 }
+
+/************* TESTS *************/
+
+".test24": {
+	width: "200dp",
+	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+
+	padding: {
+		left: "10dp",
+		right: "10dp"
+	}
+}
