@@ -11,13 +11,11 @@
 
 // Demo of custom TSS styling
 "#custom": {
-	width: "200dp",
+	width: "100dp",
 	
 	padding: {
 		top: "10dp",
-		bottom: "10dp",
-		left: "10dp",
-		right: "10dp"
+		bottom: "10dp"
 	},
 	
 	borderColor: "black",
@@ -68,4 +66,16 @@
 // Bug: https://jira.appcelerator.org/browse/TC-1945
 "Require": {
 	top: "10dp"
+}
+
+/************* TESTS *************/
+
+".test24": {
+	width: "200dp",
+	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+
+	padding: {
+		left: "10dp",
+		right: "10dp"
+	}
 }
