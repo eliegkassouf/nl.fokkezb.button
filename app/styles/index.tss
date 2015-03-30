@@ -11,11 +11,13 @@
 
 // Demo of custom TSS styling
 "#custom": {
-	width: "100dp",
+	width: "200dp",
 	
 	padding: {
 		top: "10dp",
-		bottom: "10dp"
+		bottom: "10dp",
+		left: "10dp",
+		right: "10dp"
 	},
 	
 	borderColor: "black",
