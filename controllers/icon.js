@@ -37,6 +37,14 @@ function applyProperties(_properties) {
 				iconSize.width && (_apply.width = iconSize.width);
 				iconSize.height && (_apply.height = iconSize.height);
 
+			} else if (_.isString(iconSize)){
+				var size = iconSize.split(',');
+				if(size.length == 2) {
+					_apply.width = size[0];
+					_apply.height = size[1];
+				} else {
+					_apply.width = _apply.height = iconSize;
+				}
 			} else {
 				_apply.width = _apply.height = iconSize;
 			}
@@ -51,14 +59,25 @@ function applyProperties(_properties) {
 
 			// Change type	
 			} else {
-				_view = Ti.UI.createImageView(_.extend({
-					width: Ti.UI.SIZE,
-					height: Ti.UI.SIZE,
-
-					image: icon,
-					touchEnabled: false
-				}, _apply));
-
+				
+				if(_properties.icon.toLowerCase().indexOf('.svg', _properties.icon.length - 4) !== -1) {
+					var svgView = require('com.geraudbourdin.svgview');
+					_view = svgView.createView(_.extend({
+						width: Ti.UI.SIZE,
+						height: Ti.UI.SIZE,	
+						image: icon,
+						//touchEnabled: false
+					}, _apply));
+				} else {
+					_view = Ti.UI.createImageView(_.extend({
+						width: Ti.UI.SIZE,
+						height: Ti.UI.SIZE,
+	
+						image: icon,
+						touchEnabled: false
+					}, _apply));
+				}
+				
 				// Don't apply again
 				_apply = {};
 
