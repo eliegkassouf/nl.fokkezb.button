@@ -1,5 +1,5 @@
 <Alloy>
-	<View id="outer" onTouchstart="_onTouchstart" onTouchcancel="_onTouchend" onTouchend="_onTouchend">
+	<View id="outer" onTouchstart="_onTouchstart" onTouchcancel="_onTouchend" onTouchend="_onTouchend" onClick="_onClick">
 		<View id="inner" />
 	</View>
 </Alloy>
