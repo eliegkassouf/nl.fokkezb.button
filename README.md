@@ -1,3 +1,5 @@
+> **ARCHIVED** This Widget Is No Longer Maintained
+
 # Button widget [![Titanium](http://www-static.appcelerator.com/badges/titanium-git-badge-sq.png)](http://www.appcelerator.com/titanium/) [![Alloy](http://www-static.appcelerator.com/badges/alloy-git-badge-sq.png)](http://www.appcelerator.com/alloy/)
 This widget for the [Appcelerator](http://www.appcelerator.com) Titanium Alloy MVC framework provides a view that mimics `Ti.UI.Button`, but with more flexible styling and support for icon fonts.
 
