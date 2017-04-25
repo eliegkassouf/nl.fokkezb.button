@@ -144,7 +144,7 @@ To understand what properties are available and what they do, you need to unders
 | enabled | Boolean | If `false`, the disabledStyle will be applied and no events are triggerd |
 | title | String | Optional text for the title of the button |
 | titleid | String | Optional textid for an internationalized title of the button |
-| icon | String | Optional icon image file name or the text/unicode if you use an icon font.
+| icon | String | Optional icon image file name or the text/unicode if you use an icon font. For SVG icon support you must add additional module to your project: `gittio install com.geraudbourdin.svgview`.
 | iconFont | String | The font family to use for the icon. |
 | iconSize | Number | Font size for the icon, overruling the button fontSize |
 | iconPosition | String | Positions the icon to the `left` (default) or the `right` of the title |
