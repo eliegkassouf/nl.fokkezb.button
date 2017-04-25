@@ -45,7 +45,7 @@ function applyProperties(properties) {
         _.defaults(_properties, Styles.get(_properties.style));
     }
 
-    if (properties.enabled === false) {
+    if (properties.enabled === false || properties.enabled === "false") {
         $.outer.touchEnabled = false;
 
         if (_properties.disabledStyle) {
@@ -54,8 +54,7 @@ function applyProperties(properties) {
         }
 
     } else {
-
-        if (properties.enabled === true) {
+        if (properties.enabled === true || properties.enabled === "true") {
             $.outer.touchEnabled = true;
 
             if (_properties.enabledStyle) {
@@ -285,13 +284,14 @@ function _onTouchend(e) {
         _applyOuterProperties(_properties.defaultStyle);
         _applyInnerProperties(_properties.defaultStyle);
     }
+}
 
-    if (e.type === 'touchend') {
-        $.trigger('click', {
-            type: "click",
-            source: $
-        });
-    }
+function _onClick(e) {
+	var event = {
+		type: 'click',
+		source: $
+	};
+	$.fireEvent('click', event);	
 }
 
 /*** EXPORTS ***/
