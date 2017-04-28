@@ -104,6 +104,19 @@ function applyProperties(properties) {
     _applyInnerProperties(_properties);
 }
 
+function setAccessibilityLabel(label, hint) {
+
+    $.inner.setAccessibilityLabel(label);
+    $.outer.setAccessibilityLabel(label);
+
+
+    if (hint !== undefined) {
+        $.outer.setAccessibilityHint(hint);
+        $.inner.setAccessibilityHint(hint);
+    }
+    return true;
+}
+
 function setTitle(title) {
 
     if (!_initted || !_title) {
@@ -319,6 +332,9 @@ Object.defineProperty($, "title", {
     get: getTitle,
     set: setTitle
 });
+
+// ACCESSIBILITY LABEL
+exports.setAccessibilityLabel = setAccessibilityLabel;
 
 // TITLEID
 
