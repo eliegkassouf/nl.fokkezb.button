@@ -24,7 +24,7 @@ Download this repository and consult the [Alloy Documentation](http://docs.appce
 ```xml
 <Widget src="nl.fokkezb.button" onClick="myCallback" icon="icon-on" title="My title" style="ios" />`
 ```
-	
+
 If you want to use icons:
 
 * Specificy the font family to use via `iconFont`.
@@ -108,7 +108,7 @@ $.myId.applyProperties({
 ```
 
 ## Event listeners
-Listen to the click-event like you would do with a regular button. 
+Listen to the click-event like you would do with a regular button.
 
 Either in `<Widget />`:
 
@@ -195,6 +195,7 @@ To understand what properties are available and what they do, you need to unders
 | getTitleid() | Returns the titleid |
 | setStyle(style) | Applies the style |
 | getStyle() | Returns the style name |
+| setAccessibilityLabel(label, hint) | Sets the label to be read by the accessibility feature of the device (and hint sentence, optional). Useful for icon-only buttons|
 | addEventListener(event, callback) | Attaches event listener |
 | removeEventListener(event, callback) | Removes event listener |
 | fireEvent(event, dictionary) | Fires event on the button |
@@ -228,8 +229,8 @@ The Font Awesome font is licensed under the [SIL Open Font License](http://scrip
 
 You can get [Ligature Symbols](http://kudakurage.com/ligature_symbols/) for free. This Font is licensed under the SIL Open Font License for download and using. Ligature Symbols has broad support for the modern browser (Chrome, Safari, Firefox, iOS - Mobile Safari, Android Browser).
 
-Appcelerator, Appcelerator Titanium and associated marks and logos are 
-trademarks of Appcelerator, Inc. 
+Appcelerator, Appcelerator Titanium and associated marks and logos are
+trademarks of Appcelerator, Inc.
 
 Titanium is Copyright (c) 2008-2012 by Appcelerator, Inc. All Rights Reserved.
 
